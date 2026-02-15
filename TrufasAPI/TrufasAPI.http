@@ -1,0 +1,6 @@
+@TrufasAPI_HostAddress = http://localhost:5038
+
+GET {{TrufasAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

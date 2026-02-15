@@ -15,5 +15,16 @@ namespace TrufasAPI.Data
         public DbSet<DetallePedido> DetallePedidos { get; set; }
         public DbSet<Carrito> Carritos { get; set; }
         public DbSet<DetalleCarrito> DetalleCarritos { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Usuario>().ToTable("usuarios");
+            modelBuilder.Entity<Producto>().ToTable("productos");
+            modelBuilder.Entity<Inventario>().ToTable("inventarios");
+            modelBuilder.Entity<Pedido>().ToTable("pedidos");
+            modelBuilder.Entity<DetallePedido>().ToTable("detallepedidos");
+            modelBuilder.Entity<Carrito>().ToTable("carritos");
+            modelBuilder.Entity<DetalleCarrito>().ToTable("detallecarritos");
+        }
     }
 }
